@@ -15,6 +15,7 @@ from sklearn.utils import resample
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
 from keras.callbacks import EarlyStopping
+import matplotlib.pyplot as plt
 
 nltk.download('stopwords')
 nltk.download('wordnet')
