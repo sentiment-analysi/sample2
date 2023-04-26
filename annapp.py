@@ -20,15 +20,10 @@ nltk.download('wordnet')
 
 # Load the trained model and preprocessing objects
 model = load_model('sentiment_analysis_model.h5')
+vectorizer = pickle.load(open('vectorizer.pkl','rb'))
+scaler = pickle.load(open('scaler.pkl','rb'))
+history = pickle.load(open('history.pkl','rb'))
 
-with open('vectorizer.pkl', 'rb') as f:
-    vectorizer = pickle.load(f)
-
-with open('scaler.pkl', 'rb') as f:
-    scaler = pickle.load(f)
-
-with open('history.pkl', 'rb') as f:
-    history = pickle.load(f)
 
 # Function to perform sentiment analysis
 def predict_sentiment(input_review):
