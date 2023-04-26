@@ -8,6 +8,7 @@ from spellchecker import SpellChecker
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
+from keras.models import load_model
 from sklearn.utils import resample
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
@@ -17,9 +18,16 @@ nltk.download('stopwords')
 nltk.download('wordnet')
 
 # Load the trained model and preprocessing objects
-classifier = load_model('trained_model.h5')
-cv = pickle.load(open('count-Vectorizer.pkl','rb'))
-sc = pickle.load(open('Standard-Scaler.pkl','rb'))
+model = load_model('sentiment_analysis_model.h5')
+
+with open('vectorizer.pkl', 'rb') as f:
+    vectorizer = pickle.load(f)
+
+with open('scaler.pkl', 'rb') as f:
+    scaler = pickle.load(f)
+
+with open('history.pkl', 'rb') as f:
+    history = pickle.load(f)
 
 # Function to perform sentiment analysis
 def predict_sentiment(input_review):
