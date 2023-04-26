@@ -29,6 +29,8 @@ with open('history.pkl', 'rb') as f:
     history = pickle.load(f)
 
 def predict_sentiment(input_review):
+    if not input_review:
+        return "No review"
     # Preprocess input text
     input_text = re.sub(pattern='[^a-zA-Z]',repl=' ', string=input_review)
     input_text = input_text.lower()
