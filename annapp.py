@@ -18,6 +18,7 @@ from keras.callbacks import EarlyStopping
 
 nltk.download('stopwords')
 nltk.download('wordnet')
+spell = SpellChecker()
 
 # Load the trained model and preprocessing objects
 model = load_model('sentiment_analysis_model.h5')
