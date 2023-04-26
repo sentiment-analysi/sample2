@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 import re
 import nltk
-import openpyxl
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from spellchecker import SpellChecker
