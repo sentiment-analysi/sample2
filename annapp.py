@@ -25,10 +25,9 @@ scaler = pickle.load(open('scaler.pkl','rb'))
 with open('history.pkl', 'rb') as f:
     history = pickle.load(f)
 
-# Function to perform sentiment analysis
 def predict_sentiment(input_review):
     # Preprocess input text
-    input_text = re.sub(pattern='[^a-zA-Z]',repl=' ', string=input_text)
+    input_text = re.sub(pattern='[^a-zA-Z]',repl=' ', string=input_review)
     input_text = input_text.lower()
     input_words = input_text.split()
     stop_words = set(stopwords.words('english'))
@@ -49,6 +48,7 @@ def predict_sentiment(input_review):
     sentiment = 'positive' if prediction > 0.5 else 'negative'
 
     return sentiment
+
 
 # Main function to run the app
 def main():
