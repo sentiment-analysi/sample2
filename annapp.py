@@ -3,6 +3,7 @@ import numpy as np
 import re
 import nltk
 import pickle
+import streamlit as st
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from spellchecker import SpellChecker
